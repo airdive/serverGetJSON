@@ -13,7 +13,7 @@ import entity.Userinfo;
 @Controller
 public class Test {
 	
-	@RequestMapping(value="getJSON1")
+	@RequestMapping(value="getJSON1",consumes="application/json")
 	public void getJSON1(@RequestBody Userinfo userinfo){
 		System.out.println(userinfo.getUsername());
 		System.out.println(userinfo.getPassword());
@@ -34,7 +34,7 @@ public class Test {
 		}
 	}
 	
-	
+	@RequestMapping(value="getJSON4")
 	public void getJSON4(@RequestBody Map map){
 		System.out.println(map.get("username"));
 		List<Map> workList = (List) map.get("work");
